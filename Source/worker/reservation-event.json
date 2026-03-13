@@ -1,0 +1,6 @@
+{
+  "type": "reservation_created",
+  "deviceId": 2,
+  "deviceName": "MacBook Pro",
+  "available": 2
+}

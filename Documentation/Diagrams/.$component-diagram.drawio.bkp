@@ -1,0 +1,190 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.2">
+  <diagram id="6eNJlrNXoaiSLjC4E992" name="Page-1">
+    <mxGraphModel dx="1092" dy="704" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p_ngUfL3EWCfen3_bzu--2" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Campus Device Loan System – C4 Component Diagram (API Service)&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;S&lt;font style=&quot;font-size: 14px;&quot;&gt;hows the internal components of the API Service and how they collaborate to handle authentication, reservations, loans, inventory sync events, notifications, and monitoring.&lt;/font&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="120" width="605" x="297.5" y="10" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Name="API Service" c4Type="ComponentScopeBoundary" c4Application="API Service" label="&lt;b&gt;API Service&lt;/b&gt;&#xa;&lt;div&gt;[Container: Azure App Service]&lt;/div&gt;" id="p_ngUfL3EWCfen3_bzu--5">
+          <mxCell parent="1" style="rounded=1;fontSize=11;whiteSpace=wrap;html=1;dashed=1;arcSize=20;fillColor=none;strokeColor=#666666;fontColor=#333333;labelBackgroundColor=none;align=left;verticalAlign=bottom;labelBorderColor=none;spacingTop=0;spacing=10;dashPattern=8 4;metaEdit=1;rotatable=0;perimeter=rectanglePerimeter;noLabel=0;labelPadding=0;allowArrows=0;connectable=0;expand=0;recursiveResize=0;editable=1;pointerEvents=0;absoluteArcSize=1;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="550" width="1100" x="40" y="110" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Auth Adapter" c4Type="Component" c4Technology="OIDC JWT validation" c4Description="API Controllers depend on Auth Adapter&#xa;Auth Adapter validates with Azure AD" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="p_ngUfL3EWCfen3_bzu--6">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#63BEF2;fontColor=#ffffff;align=center;arcSize=6;strokeColor=#2086C9;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="120" width="240" x="80" y="310" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-3" edge="1" parent="1" source="p_ngUfL3EWCfen3_bzu--7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.75;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="p_ngUfL3EWCfen3_bzu--6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="290" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-4" connectable="0" parent="JINHK5Vkudbn8ZZGJBFq-3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Validate JWT and role claims over HTTPS" vertex="1">
+          <mxGeometry relative="1" x="0.0146" y="1" as="geometry">
+            <mxPoint x="58" y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <object placeholders="1" c4Name="API Controllers" c4Type="Component" c4Technology="REST Controllers" c4Description="Receives HTTPS requests and routes them to internal services." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="p_ngUfL3EWCfen3_bzu--7">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#63BEF2;fontColor=#ffffff;align=center;arcSize=6;strokeColor=#2086C9;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="120" width="240" x="480" y="140" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-7" edge="1" parent="1" source="p_ngUfL3EWCfen3_bzu--8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;entryPerimeter=0;" target="p_ngUfL3EWCfen3_bzu--10">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="410" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-8" connectable="0" parent="JINHK5Vkudbn8ZZGJBFq-7" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Read and write data" vertex="1">
+          <mxGeometry relative="1" x="0.1018" y="-1" as="geometry">
+            <mxPoint y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-13" edge="1" parent="1" source="p_ngUfL3EWCfen3_bzu--8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;entryPerimeter=0;" target="p_ngUfL3EWCfen3_bzu--9">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="880" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-14" connectable="0" parent="JINHK5Vkudbn8ZZGJBFq-13" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Write business logs &amp;amp; metrics" vertex="1">
+          <mxGeometry relative="1" x="-0.1593" y="3" as="geometry">
+            <mxPoint x="-3" y="20" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <object placeholders="1" c4Name="Loan Service" c4Type="Component" c4Technology="Business Service" c4Description="Implements loan, reservation, return and waitlist business rules." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="p_ngUfL3EWCfen3_bzu--8">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#63BEF2;fontColor=#ffffff;align=center;arcSize=6;strokeColor=#2086C9;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="120" width="240" x="480" y="310" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Monitoring Client" c4Type="Component" c4Technology="Azure Monitor client" c4Description="Captures logs, metrics, traces and correlation IDs." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="p_ngUfL3EWCfen3_bzu--9">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#63BEF2;fontColor=#ffffff;align=center;arcSize=6;strokeColor=#2086C9;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="120" width="240" x="880" y="310" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-17" edge="1" parent="1" source="p_ngUfL3EWCfen3_bzu--10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" target="p_ngUfL3EWCfen3_bzu--14">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="290" y="620" as="sourcePoint" />
+            <mxPoint x="420" y="640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-18" connectable="0" parent="JINHK5Vkudbn8ZZGJBFq-17" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="SQL over TLS" vertex="1">
+          <mxGeometry relative="1" x="-0.1585" y="2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <object placeholders="1" c4Name="Loan Repository" c4Type="Component" c4Technology="ORM / Data Access Layer" c4Description="Reads and writes loan data in Azure SQL Database." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="p_ngUfL3EWCfen3_bzu--10">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#63BEF2;fontColor=#ffffff;align=center;arcSize=6;strokeColor=#2086C9;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="120" width="240" x="80" y="480" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Service Bus Publisher" c4Type="Component" c4Technology="Azure Service Bus client" c4Description="Publishes domain events for inventory sync and notifications." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="p_ngUfL3EWCfen3_bzu--11">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#63BEF2;fontColor=#ffffff;align=center;arcSize=6;strokeColor=#2086C9;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="120" width="240" x="480" y="480" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Azure AD Microsoft Entra ID" c4Type="External Software System" c4Description="OIDC login and token validation for role based access control" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="p_ngUfL3EWCfen3_bzu--12">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#8C8496;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#736782;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="120" width="240" x="40" y="680" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Azure Service Bus" c4Type="External Software System" c4Description="Event messaging for async workflows" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="p_ngUfL3EWCfen3_bzu--13">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#8C8496;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#736782;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="120" width="240" x="330" y="680" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Azure SQL Database" c4Type="External Software System" c4Description="Managed relational database for loans reservations and devices" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="p_ngUfL3EWCfen3_bzu--14">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#8C8496;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#736782;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="120" width="240" x="620" y="680" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Azure Monitor Application Insights" c4Type="External Software System" c4Description="Logs metrics traces and alerting" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="p_ngUfL3EWCfen3_bzu--15">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#8C8496;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#736782;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="120" width="240" x="910" y="680" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-2" edge="1" parent="1" source="p_ngUfL3EWCfen3_bzu--2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="p_ngUfL3EWCfen3_bzu--2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-5" edge="1" parent="1" source="p_ngUfL3EWCfen3_bzu--7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="p_ngUfL3EWCfen3_bzu--8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-6" connectable="0" parent="JINHK5Vkudbn8ZZGJBFq-5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Call loan reservation return operations" vertex="1">
+          <mxGeometry relative="1" x="-0.0104" as="geometry">
+            <mxPoint y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-9" edge="1" parent="1" source="p_ngUfL3EWCfen3_bzu--10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="p_ngUfL3EWCfen3_bzu--11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-10" connectable="0" parent="JINHK5Vkudbn8ZZGJBFq-9" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Create domain events" vertex="1">
+          <mxGeometry relative="1" x="-0.0426" y="1" as="geometry">
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-11" edge="1" parent="1" source="p_ngUfL3EWCfen3_bzu--7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;entryPerimeter=0;" target="p_ngUfL3EWCfen3_bzu--9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-12" connectable="0" parent="JINHK5Vkudbn8ZZGJBFq-11" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Write request logs &amp;amp; traces" vertex="1">
+          <mxGeometry relative="1" x="-0.1862" y="-2" as="geometry">
+            <mxPoint x="2" y="47" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-15" edge="1" parent="1" source="p_ngUfL3EWCfen3_bzu--6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;entryPerimeter=0;" target="p_ngUfL3EWCfen3_bzu--12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-16" connectable="0" parent="JINHK5Vkudbn8ZZGJBFq-15" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="OIDC token validation over HTTPS" vertex="1">
+          <mxGeometry relative="1" x="-0.2187" as="geometry">
+            <mxPoint x="70" y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-19" edge="1" parent="1" source="p_ngUfL3EWCfen3_bzu--11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.25;entryDx=0;entryDy=0;entryPerimeter=0;" target="p_ngUfL3EWCfen3_bzu--13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-20" connectable="0" parent="JINHK5Vkudbn8ZZGJBFq-19" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Publish events" vertex="1">
+          <mxGeometry relative="1" x="-0.6698" y="-2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-21" edge="1" parent="1" source="p_ngUfL3EWCfen3_bzu--9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="p_ngUfL3EWCfen3_bzu--15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-22" connectable="0" parent="JINHK5Vkudbn8ZZGJBFq-21" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Send logs metrics traces over HTTPS" vertex="1">
+          <mxGeometry relative="1" x="-0.3254" y="-1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-37" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Created by Arshad Aslam | K0352250" vertex="1">
+          <mxGeometry height="20" width="210" x="940" y="807" as="geometry" />
+        </mxCell>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-46" parent="1" style="shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fontSize=16;align=left;verticalAlign=top;fillColor=none;strokeColor=none;fontColor=#4D4D4D;fontStyle=1;spacingLeft=6;spacing=0;resizable=0;" value="Legend" vertex="1">
+          <mxGeometry height="90" width="180" x="940" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-51" parent="JINHK5Vkudbn8ZZGJBFq-46" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" value="" vertex="1">
+          <mxGeometry height="21" width="180" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-52" parent="JINHK5Vkudbn8ZZGJBFq-51" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=none;overflow=hidden;fillColor=#000000;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=12;align=left;fontColor=#FFFFFF;gradientColor=none;spacingLeft=10;spacingRight=4;" value="Component Scope Boundary" vertex="1">
+          <mxGeometry height="21" width="180" as="geometry">
+            <mxRectangle height="21" width="180" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-53" parent="JINHK5Vkudbn8ZZGJBFq-46" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" value="" vertex="1">
+          <mxGeometry height="18" width="180" y="51" as="geometry" />
+        </mxCell>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-54" parent="JINHK5Vkudbn8ZZGJBFq-53" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#7dbef2;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=12;align=left;fontColor=#FFFFFF;gradientColor=none;spacingLeft=10;spacingRight=4;" value="Component" vertex="1">
+          <mxGeometry height="18" width="180" as="geometry">
+            <mxRectangle height="18" width="180" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-57" parent="JINHK5Vkudbn8ZZGJBFq-46" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" value="" vertex="1">
+          <mxGeometry height="21" width="180" y="69" as="geometry" />
+        </mxCell>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-58" parent="JINHK5Vkudbn8ZZGJBFq-57" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=#8b8496;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=12;align=left;fontColor=#FFFFFF;gradientColor=none;spacingLeft=10;spacingRight=4;" value="External Software System" vertex="1">
+          <mxGeometry height="21" width="180" as="geometry">
+            <mxRectangle height="21" width="180" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

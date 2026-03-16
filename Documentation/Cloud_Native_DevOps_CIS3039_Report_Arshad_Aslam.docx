@@ -1,0 +1,134 @@
+# Campus Device Loan System
+Student Name: Arshad Aslam
+Student ID: K0352250
+Module: Cloud Native DevOps (CIS3039-N)
+University: Teesside University
+
+## Project Overview
+This project implements a simple cloud-native style Campus Device Loan System.
+The system allows users to view available campus devices and reserve them using a lightweight API service.
+The architecture separates the system into different services to demonstrate cloud-native and DevOps development practices.
+The system includes an API service, a background worker service, automated tests, and supporting documentation that explains the system architecture and deployment design.
+
+## System Architecture
+The system is composed of three main components.
+Web Interface  
+Provides a simple frontend interface that displays available devices retrieved from the API.
+API Service  
+Handles device data, reservation functionality, and exposes system endpoints.
+Worker Service  
+Processes reservation events asynchronously and simulates background processing similar to microservice architectures.
+Architecture diagrams are included in the Documentation folder and follow the C4 model approach.
+
+## Project Structure
+CIS3039_Campus-Device-Loan-System_Arshad_Aslam
+README.md
+Documentation
+Report document
+Architecture diagrams
+Media
+Evidence screenshots of system behaviour
+Git workflow
+GitHub Actions pipeline
+Service execution
+Source
+api
+worker
+tests
+web
+package configuration files
+
+## Source Code Structure
+
+API Service
+Location:
+Source/api
+Responsible for:
+device listing endpoint
+single device endpoint
+reservation endpoint
+health monitoring endpoint
+protected endpoint example
+Example endpoints:
+/devices
+/devices/:id
+/health
+/admin
+
+Worker Service
+Location:
+Source/worker
+The worker simulates asynchronous event processing. When a reservation event is created the worker processes the event and outputs confirmation in the console.
+This demonstrates background processing similar to message-driven systems used in microservice architectures.
+
+Frontend
+Location:
+Source/api/public/index.html
+A simple HTML interface used to display available devices retrieved from the API service.
+
+Automated Tests
+Location:
+Source/tests/api.test.js
+Automated tests verify the API behaviour including:
+health endpoint
+device list endpoint
+single device endpoint
+protected admin endpoint
+Tests can be executed using:
+npm test
+
+## DevOps Practices Demonstrated
+This project demonstrates several DevOps practices including:
+Git version control
+structured repository organisation
+automated testing
+GitHub Actions continuous integration
+service based architecture design
+cloud ready system layout
+
+## Artefacts and Evidence
+The Media directory contains screenshots demonstrating the working system and development workflow.
+Examples include:
+API service running
+device list response
+reservation state change
+health endpoint response
+API testing results
+worker service processing events
+Git version control activity
+GitHub Actions CI pipeline execution
+
+## Running the System
+Navigate to the API directory:
+cd Source/api
+Install dependencies:
+npm install
+Start the API service:
+npm start
+The API will run at:
+http://localhost:3000
+Example health endpoint:
+http://localhost:3000/health
+
+## Running Tests
+Navigate to the project directory and run:
+npm test
+This executes automated tests validating the API endpoints.
+
+## Author
+Arshad Aslam
+BSc Computer Science
+Teesside University
+Coursework submission for:
+CIS3039 Cloud Native DevOps
+
+## Submission Structure
+The submission archive contains:
+README.md
+Documentation
+Media
+Source
+Before submitting the coursework the following folders should be removed:
+.git
+node_modules
+These are not required for coursework submission.

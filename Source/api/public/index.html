@@ -5,627 +5,362 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Campus Device Loan System</title>
 <style>
-
-    :root {
-
-      --bg: #f4f6f8;
-
-      --surface: #ffffff;
-
-      --text: #1f2933;
-
-      --muted: #6b7280;
-
-      --primary: #1d4ed8;
-
-      --primary-hover: #1e40af;
-
-      --success-bg: #ecfdf3;
-
-      --success-text: #166534;
-
-      --error-bg: #fef2f2;
-
-      --error-text: #991b1b;
-
-      --border: #d1d5db;
-
-      --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-
-      --radius: 14px;
-
-    }
-
-    * {
-
-      box-sizing: border-box;
-
-    }
-
-    body {
-
-      margin: 0;
-
-      font-family: Arial, Helvetica, sans-serif;
-
-      background: var(--bg);
-
-      color: var(--text);
-
-    }
-
-    .page {
-
-      max-width: 1100px;
-
-      margin: 0 auto;
-
-      padding: 32px 20px 48px;
-
-    }
-
-    .hero {
-
-      background: linear-gradient(135deg, #1d4ed8, #2563eb);
-
-      color: #ffffff;
-
-      padding: 28px;
-
-      border-radius: var(--radius);
-
-      box-shadow: var(--shadow);
-
-      margin-bottom: 24px;
-
-    }
-
-    .hero h1 {
-
-      margin: 0 0 8px;
-
-      font-size: 2rem;
-
-    }
-
-    .hero p {
-
-      margin: 0;
-
-      line-height: 1.5;
-
-      max-width: 760px;
-
-    }
-
-    .panel {
-
-      background: var(--surface);
-
-      border-radius: var(--radius);
-
-      box-shadow: var(--shadow);
-
-      padding: 20px;
-
-      margin-bottom: 20px;
-
-    }
-
-    .panel-header {
-
-      display: flex;
-
-      justify-content: space-between;
-
-      align-items: center;
-
-      gap: 16px;
-
-      flex-wrap: wrap;
-
-      margin-bottom: 16px;
-
-    }
-
-    .panel-header h2 {
-
-      margin: 0;
-
-      font-size: 1.25rem;
-
-    }
-
-    .controls {
-
-      display: flex;
-
-      gap: 10px;
-
-      flex-wrap: wrap;
-
-    }
-
-    button {
-
-      border: none;
-
-      border-radius: 10px;
-
-      padding: 10px 16px;
-
-      font-size: 0.95rem;
-
-      cursor: pointer;
-
-      transition: 0.2s ease;
-
-    }
-
-    .primary-btn {
-
-      background: var(--primary);
-
-      color: #ffffff;
-
-    }
-
-    .primary-btn:hover {
-
-      background: var(--primary-hover);
-
-    }
-
-    .secondary-btn {
-
-      background: #e5e7eb;
-
-      color: #111827;
-
-    }
-
-    .secondary-btn:hover {
-
-      background: #d1d5db;
-
-    }
-
-    .status {
-
-      margin-bottom: 16px;
-
-      padding: 12px 14px;
-
-      border-radius: 10px;
-
-      font-size: 0.95rem;
-
-      display: none;
-
-    }
-
-    .status.success {
-
-      display: block;
-
-      background: var(--success-bg);
-
-      color: var(--success-text);
-
-    }
-
-    .status.error {
-
-      display: block;
-
-      background: var(--error-bg);
-
-      color: var(--error-text);
-
-    }
-
-    .summary-grid {
-
-      display: grid;
-
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-
-      gap: 16px;
-
-      margin-bottom: 20px;
-
-    }
-
-    .summary-card {
-
-      background: #f8fafc;
-
-      border: 1px solid var(--border);
-
-      border-radius: 12px;
-
-      padding: 16px;
-
-    }
-
-    .summary-card span {
-
-      display: block;
-
-      color: var(--muted);
-
-      font-size: 0.9rem;
-
-      margin-bottom: 6px;
-
-    }
-
-    .summary-card strong {
-
-      font-size: 1.4rem;
-
-    }
-
-    .table-wrap {
-
-      overflow-x: auto;
-
-    }
-
-    table {
-
-      width: 100%;
-
-      border-collapse: collapse;
-
-      background: #ffffff;
-
-    }
-
-    th, td {
-
-      text-align: left;
-
-      padding: 14px 12px;
-
-      border-bottom: 1px solid #e5e7eb;
-
-      vertical-align: middle;
-
-    }
-
-    th {
-
-      background: #f9fafb;
-
-      font-size: 0.95rem;
-
-    }
-
-    .availability-badge {
-
-      display: inline-block;
-
-      padding: 6px 10px;
-
-      border-radius: 999px;
-
-      font-size: 0.85rem;
-
-      font-weight: bold;
-
-    }
-
-    .available {
-
-      background: #dcfce7;
-
-      color: #166534;
-
-    }
-
-    .limited {
-
-      background: #fef3c7;
-
-      color: #92400e;
-
-    }
-
-    .unavailable {
-
-      background: #fee2e2;
-
-      color: #991b1b;
-
-    }
-
-    .reserve-btn {
-
-      background: var(--primary);
-
-      color: #ffffff;
-
-      padding: 8px 12px;
-
-      border-radius: 8px;
-
-    }
-
-    .reserve-btn:hover {
-
-      background: var(--primary-hover);
-
-    }
-
-    .reserve-btn:disabled {
-
-      background: #9ca3af;
-
-      cursor: not-allowed;
-
-    }
-
-    .footer-note {
-
-      margin-top: 16px;
-
-      color: var(--muted);
-
-      font-size: 0.92rem;
-
-      line-height: 1.5;
-
-    }
-
-    @media (max-width: 640px) {
-
-      .hero h1 {
-
-        font-size: 1.6rem;
-
-      }
-
-      th, td {
-
-        padding: 12px 10px;
-
-      }
-
-    }
+body{
+font-family:Arial, Helvetica, sans-serif;
+margin:0;
+background:#f4f6f8;
+color:#1f2933;
+}
+.page{
+max-width:1000px;
+margin:auto;
+padding:30px;
+}
+.hero{
+background:#1d4ed8;
+color:white;
+padding:25px;
+border-radius:10px;
+margin-bottom:20px;
+}
+.hero h1{
+margin:0 0 10px 0;
+}
+.panel{
+background:white;
+padding:20px;
+border-radius:10px;
+margin-bottom:20px;
+box-shadow:0 4px 12px rgba(0,0,0,0.05);
+}
+button{
+padding:10px 16px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+margin-right:8px;
+font-size:0.95rem;
+}
+.primary-btn{
+background:#1d4ed8;
+color:white;
+}
+.primary-btn:hover{
+background:#1e40af;
+}
+.secondary-btn{
+background:#e5e7eb;
+color:#111827;
+}
+.secondary-btn:hover{
+background:#d1d5db;
+}
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:10px;
+}
+th,td{
+padding:10px;
+border-bottom:1px solid #ddd;
+text-align:left;
+}
+th{
+background:#f9fafb;
+}
+.reserve-btn{
+background:#1d4ed8;
+color:white;
+padding:6px 12px;
+border-radius:6px;
+}
+.reserve-btn:disabled{
+background:#9ca3af;
+cursor:not-allowed;
+}
+.response{
+background:#111827;
+color:white;
+padding:14px;
+border-radius:10px;
+font-family:monospace;
+white-space:pre-wrap;
+min-height:100px;
+overflow:auto;
+}
+.summary-grid{
+display:flex;
+gap:20px;
+margin-bottom:15px;
+flex-wrap:wrap;
+}
+.summary-card{
+background:#f9fafb;
+padding:12px;
+border-radius:8px;
+min-width:160px;
+}
+.form-row{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-top:10px;
+}
+input,select{
+padding:10px;
+border:1px solid #d1d5db;
+border-radius:8px;
+font-size:0.95rem;
+}
+.status-note{
+font-size:0.9rem;
+color:#6b7280;
+margin-top:10px;
+line-height:1.5;
+}
+footer{
+text-align:center;
+margin:20px 0 30px 0;
+font-size:0.9rem;
+color:#666;
+}
 </style>
 </head>
 <body>
 <div class="page">
-<section class="hero">
+<div class="hero">
 <h1>Campus Device Loan System</h1>
-<p>
-
-        This prototype frontend allows students to browse available devices and submit reservations.
-
-        It connects to the backend API and reflects live availability from the current in memory device store.
-</p>
-</section>
-<section class="panel">
-<div class="panel-header">
+<p>Cloud Native DevOps coursework demonstration interface for student reservations, staff processing, subscription requests, and system monitoring.</p>
+</div>
+<div class="panel">
+<h2>System Controls</h2>
+<button class="primary-btn" onclick="checkHealth()">Health Check</button>
+<button class="secondary-btn" onclick="checkReady()">Ready Check</button>
+<button class="secondary-btn" onclick="clearResponse()">Clear</button>
+<div class="status-note">Health confirms the API is running. Ready confirms the service is ready to accept requests.</div>
+</div>
+<div class="panel">
+<h2>Demo Login</h2>
+<div class="form-row">
+<input id="username" placeholder="username">
+<select id="role">
+<option value="student">student</option>
+<option value="staff">staff</option>
+</select>
+<button class="primary-btn" onclick="login()">Login</button>
+</div>
+<div class="status-note" id="loginStatus">No user currently logged in.</div>
+</div>
+<div class="panel">
+<h2>Subscribe for Device Notification</h2>
+<div class="form-row">
+<input id="email" placeholder="email">
+<input id="model" placeholder="device model">
+<button class="primary-btn" onclick="subscribe()">Subscribe</button>
+</div>
+</div>
+<div class="panel">
 <h2>Device Catalogue</h2>
-<div class="controls">
-<button class="primary-btn" onclick="loadDevices()">Refresh Devices</button>
-<button class="secondary-btn" onclick="clearMessage()">Clear Message</button>
-</div>
-</div>
-<div id="statusMessage" class="status"></div>
+<button class="primary-btn" onclick="loadDevices(true)">Refresh Devices</button>
 <div class="summary-grid">
-<div class="summary-card">
-<span>Total device models</span>
-<strong id="totalModels">0</strong>
+<div class="summary-card">Models: <strong id="totalModels">0</strong></div>
+<div class="summary-card">Available: <strong id="totalAvailable">0</strong></div>
+<div class="summary-card">In Stock: <strong id="modelsInStock">0</strong></div>
 </div>
-<div class="summary-card">
-<span>Total units available</span>
-<strong id="totalAvailable">0</strong>
-</div>
-<div class="summary-card">
-<span>Models in stock</span>
-<strong id="modelsInStock">0</strong>
-</div>
-</div>
-<div class="table-wrap">
 <table>
 <thead>
 <tr>
 <th>ID</th>
-<th>Device Name</th>
-<th>Availability</th>
+<th>Name</th>
+<th>Available</th>
 <th>Reserve</th>
 </tr>
 </thead>
-<tbody id="deviceTableBody">
-<tr>
-<td colspan="4">Loading devices...</td>
-</tr>
+<tbody id="deviceTable">
+<tr><td colspan="4">Loading...</td></tr>
 </tbody>
 </table>
+<div class="status-note">
+Student workflow: login as student, then reserve a device.<br>
+Staff workflow: login as staff, then mark collected and mark returned using the same device ID.
 </div>
-<p class="footer-note">
-
-        This page is intentionally lightweight for the minimal viable build. In a production deployment,
-
-        device data, authentication, and reservation auditing would be backed by persistent storage and secured endpoints.
-</p>
-</section>
 </div>
+<div class="panel">
+<h2>Staff Actions</h2>
+<div class="form-row">
+<input id="staffDeviceId" placeholder="device id">
+<button class="primary-btn" onclick="collect()">Mark Collected</button>
+<button class="secondary-btn" onclick="returnDevice()">Mark Returned</button>
+</div>
+<div class="status-note">
+Collect changes reservation status from reserved to collected.<br>
+Return changes reservation status from collected to returned and increases availability by 1.
+</div>
+</div>
+<div class="panel">
+<h2>System Response</h2>
+<div id="responseBox" class="response">API responses will appear here...</div>
+</div>
+</div>
+<footer>
+Campus Device Loan System | Arshad Aslam | Teesside University
+</footer>
 <script>
-
-    const apiBaseUrl = window.location.origin;
-
-    function showMessage(message, type) {
-
-      const statusBox = document.getElementById("statusMessage");
-
-      statusBox.textContent = message;
-
-      statusBox.className = `status ${type}`;
-
-    }
-
-    function clearMessage() {
-
-      const statusBox = document.getElementById("statusMessage");
-
-      statusBox.textContent = "";
-
-      statusBox.className = "status";
-
-    }
-
-    function getAvailabilityClass(value) {
-
-      if (value <= 0) return "unavailable";
-
-      if (value <= 2) return "limited";
-
-      return "available";
-
-    }
-
-    function getAvailabilityLabel(value) {
-
-      if (value <= 0) return "Out of stock";
-
-      if (value <= 2) return `${value} left`;
-
-      return `${value} available`;
-
-    }
-
-    function updateSummary(devices) {
-
-      const totalModels = devices.length;
-
-      const totalAvailable = devices.reduce((sum, device) => sum + Number(device.available || 0), 0);
-
-      const modelsInStock = devices.filter(device => Number(device.available) > 0).length;
-
-      document.getElementById("totalModels").textContent = totalModels;
-
-      document.getElementById("totalAvailable").textContent = totalAvailable;
-
-      document.getElementById("modelsInStock").textContent = modelsInStock;
-
-    }
-
-    async function loadDevices() {
-
-      clearMessage();
-
-      try {
-
-        const response = await fetch(`${apiBaseUrl}/devices`);
-
-        if (!response.ok) {
-
-          throw new Error("Unable to load device data from the API.");
-
-        }
-
-        const devices = await response.json();
-
-        const tableBody = document.getElementById("deviceTableBody");
-
-        tableBody.innerHTML = "";
-
-        if (!devices.length) {
-
-          tableBody.innerHTML = `<tr><td colspan="4">No devices found.</td></tr>`;
-
-          updateSummary([]);
-
-          return;
-
-        }
-
-        devices.forEach(device => {
-
-          const row = document.createElement("tr");
-
-          const disabled = Number(device.available) <= 0 ? "disabled" : "";
-
-          row.innerHTML = `
-<td>${device.id}</td>
-<td>${device.name}</td>
+const api = window.location.origin
+let currentUserRole = null
+let currentUsername = null
+function showResponse(data){
+document.getElementById("responseBox").textContent = JSON.stringify(data, null, 2)
+}
+function clearResponse(){
+document.getElementById("responseBox").textContent = "API responses will appear here..."
+}
+function updateLoginStatus(){
+const status = document.getElementById("loginStatus")
+if(currentUserRole && currentUsername){
+status.textContent = `Logged in as ${currentUsername} (${currentUserRole})`
+}else{
+status.textContent = "No user currently logged in."
+}
+}
+async function loadDevices(updateResponse = false){
+try{
+const res = await fetch(`${api}/devices`)
+const data = await res.json()
+const table = document.getElementById("deviceTable")
+table.innerHTML = ""
+let total = 0
+let models = 0
+data.forEach(d => {
+total += Number(d.available)
+if(Number(d.available) > 0) models++
+const disabled = Number(d.available) <= 0 ? "disabled" : ""
+table.innerHTML += `
+<tr>
+<td>${d.id}</td>
+<td>${d.name}</td>
+<td>${d.available}</td>
 <td>
-<span class="availability-badge ${getAvailabilityClass(device.available)}">
-
-                ${getAvailabilityLabel(device.available)}
-</span>
+<button class="reserve-btn" ${disabled} onclick="reserve(${d.id})">Reserve</button>
 </td>
-<td>
-<button class="reserve-btn" ${disabled} onclick="reserveDevice(${device.id}, '${device.name.replace(/'/g, "\\'")}')">
-
-                Reserve
-</button>
-</td>
-
-          `;
-
-          tableBody.appendChild(row);
-
-        });
-
-        updateSummary(devices);
-
-      } catch (error) {
-
-        document.getElementById("deviceTableBody").innerHTML =
-
-          `<tr><td colspan="4">Failed to load devices.</td></tr>`;
-
-        updateSummary([]);
-
-        showMessage(error.message, "error");
-
-      }
-
-    }
-
-    async function reserveDevice(deviceId, deviceName) {
-
-      clearMessage();
-
-      try {
-
-        const response = await fetch(`${apiBaseUrl}/reserve/${deviceId}`, {
-
-          method: "POST"
-
-        });
-
-        const responseText = await response.text();
-
-        if (!response.ok) {
-
-          throw new Error(responseText || "Reservation failed.");
-
-        }
-
-        showMessage(`${deviceName} reserved successfully. Availability has been updated.`, "success");
-
-        await loadDevices();
-
-      } catch (error) {
-
-        showMessage(error.message || "Reservation could not be completed.", "error");
-
-      }
-
-    }
-
-    loadDevices();
+</tr>
+`
+})
+document.getElementById("totalModels").textContent = data.length
+document.getElementById("totalAvailable").textContent = total
+document.getElementById("modelsInStock").textContent = models
+if(updateResponse){
+showResponse(data)
+}
+}catch(error){
+showResponse({ message: "Failed to load devices", error: error.message })
+}
+}
+async function reserve(id){
+try{
+const res = await fetch(`${api}/reserve/${id}`, {
+method: "POST"
+})
+const data = await res.json()
+showResponse(data)
+await loadDevices(false)
+}catch(error){
+showResponse({ message: "Reservation failed", error: error.message })
+}
+}
+async function login(){
+try{
+const username = document.getElementById("username").value.trim()
+const role = document.getElementById("role").value
+const res = await fetch(`${api}/login`, {
+method: "POST",
+headers: { "Content-Type": "application/json" },
+body: JSON.stringify({ username, role })
+})
+const data = await res.json()
+if(res.ok){
+currentUserRole = role
+currentUsername = username
+updateLoginStatus()
+}
+showResponse(data)
+}catch(error){
+showResponse({ message: "Login failed", error: error.message })
+}
+}
+async function subscribe(){
+try{
+const email = document.getElementById("email").value.trim()
+const model = document.getElementById("model").value.trim()
+const res = await fetch(`${api}/subscribe`, {
+method: "POST",
+headers: { "Content-Type": "application/json" },
+body: JSON.stringify({ email, model })
+})
+const data = await res.json()
+showResponse(data)
+}catch(error){
+showResponse({ message: "Subscription failed", error: error.message })
+}
+}
+async function collect(){
+try{
+if(currentUserRole !== "staff"){
+showResponse({ message: "Staff access required" })
+return
+}
+const id = document.getElementById("staffDeviceId").value.trim()
+const res = await fetch(`${api}/collect/${id}`, {
+method: "POST",
+headers: { "Content-Type": "application/json" },
+body: JSON.stringify({ role: "staff" })
+})
+const data = await res.json()
+showResponse(data)
+await loadDevices(false)
+}catch(error){
+showResponse({ message: "Collect failed", error: error.message })
+}
+}
+async function returnDevice(){
+try{
+if(currentUserRole !== "staff"){
+showResponse({ message: "Staff access required" })
+return
+}
+const id = document.getElementById("staffDeviceId").value.trim()
+const res = await fetch(`${api}/return/${id}`, {
+method: "POST",
+headers: { "Content-Type": "application/json" },
+body: JSON.stringify({ role: "staff" })
+})
+const data = await res.json()
+showResponse(data)
+await loadDevices(false)
+}catch(error){
+showResponse({ message: "Return failed", error: error.message })
+}
+}
+async function checkHealth(){
+try{
+const res = await fetch(`${api}/health`)
+const data = await res.json()
+showResponse(data)
+}catch(error){
+showResponse({ message: "Health check failed", error: error.message })
+}
+}
+async function checkReady(){
+try{
+const res = await fetch(`${api}/ready`)
+const data = await res.json()
+showResponse(data)
+}catch(error){
+showResponse({ message: "Ready check failed", error: error.message })
+}
+}
+updateLoginStatus()
+loadDevices(false)
 </script>
 </body>
 </html>
- <footer style="margin-top:40px;text-align:center;font-size:0.8rem;color:#666;">
-Campus Device Loan System – Demonstration Artefact  
-Arshad Aslam | Student ID: K0352250  
-Teesside University – Cloud Native DevOps
-</footer>

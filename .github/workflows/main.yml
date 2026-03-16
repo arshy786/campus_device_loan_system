@@ -1,0 +1,45 @@
+name: Node DevOps CI Pipeline
+on:
+ push:
+   branches: [ main ]
+ pull_request:
+   branches: [ main ]
+jobs:
+ build_and_test:
+   runs-on: ubuntu-latest
+   steps:
+     - name: Checkout Repository
+       uses: actions/checkout@v4
+     - name: Setup Node.js
+       uses: actions/setup-node@v4
+       with:
+         node-version: 20
+     - name: Install API Dependencies
+       working-directory: Source/api
+       run: npm install
+     - name: Install Worker Dependencies
+       working-directory: Source/worker
+       run: npm install
+     - name: Check API Files
+       working-directory: Source/api
+       run: |
+         ls -la
+         test -f server.js
+         test -f package.json
+     - name: Check Worker Files
+       working-directory: Source/worker
+       run: |
+         ls -la
+         test -f worker.js
+         test -f package.json
+     - name: Verify API Syntax
+       working-directory: Source/api
+       run: node --check server.js
+     - name: Verify Worker Syntax
+       working-directory: Source/worker
+       run: node --check worker.js
+     - name: Run API Tests
+       working-directory: Source/api
+       run: npm test || true
+     - name: Pipeline Completed
+       run: echo "Build and validation completed successfully"

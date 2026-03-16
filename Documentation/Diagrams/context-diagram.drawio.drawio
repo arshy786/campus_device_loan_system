@@ -1,6 +1,6 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.2">
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
   <diagram name="Page-1" id="W1Gx10qKv5srvs59yb9w">
-    <mxGraphModel dx="3157" dy="528" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="3943" dy="960" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -144,6 +144,9 @@
           <mxGeometry height="34" width="180" as="geometry">
             <mxRectangle height="34" width="180" as="alternateBounds" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="PbSi6OYbl4EusyECmtB9-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;span data-teams=&quot;true&quot;&gt;Figure 1 – C4 System Context Diagram&lt;br&gt;&lt;br&gt;&lt;br/&gt;This diagram illustrates the overall environment in which the Campus Device Loan System operates. It identifies the primary users of the system, including students, staff members and guest users, and shows how they interact with the platform. The diagram also highlights the external services that support the system, such as Auth0 for authentication, Azure Communication Services for notifications, Azure Monitor for monitoring and observability, and the University Inventory API for synchronising device data. This view defines the system boundary and provides a high level understanding of how the platform integrates with its external ecosystem.&lt;/span&gt;" vertex="1">
+          <mxGeometry height="106" width="882" x="-1602" y="1423.28" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

@@ -1,6 +1,6 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.2">
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
   <diagram id="6eNJlrNXoaiSLjC4E992" name="Page-1">
-    <mxGraphModel dx="1092" dy="704" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="883" dy="528" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -22,7 +22,7 @@
             <mxPoint x="290" y="280" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="JINHK5Vkudbn8ZZGJBFq-4" connectable="0" parent="JINHK5Vkudbn8ZZGJBFq-3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Validate JWT and role claims over HTTPS" vertex="1">
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-4" connectable="0" parent="JINHK5Vkudbn8ZZGJBFq-3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Validate JWT and role claims" vertex="1">
           <mxGeometry relative="1" x="0.0146" y="1" as="geometry">
             <mxPoint x="58" y="-1" as="offset" />
           </mxGeometry>
@@ -78,12 +78,15 @@
             <mxGeometry height="120" width="240" x="80" y="480" as="geometry" />
           </mxCell>
         </object>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-64" edge="1" parent="1" source="p_ngUfL3EWCfen3_bzu--11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#FFFFFF;" target="p_ngUfL3EWCfen3_bzu--8" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <object placeholders="1" c4Name="Service Bus Publisher" c4Type="Component" c4Technology="Azure Service Bus client" c4Description="Publishes domain events for inventory sync and notifications." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="p_ngUfL3EWCfen3_bzu--11">
           <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#63BEF2;fontColor=#ffffff;align=center;arcSize=6;strokeColor=#2086C9;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
             <mxGeometry height="120" width="240" x="480" y="480" as="geometry" />
           </mxCell>
         </object>
-        <object placeholders="1" c4Name="Azure AD Microsoft Entra ID" c4Type="External Software System" c4Description="OIDC login and token validation for role based access control" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="p_ngUfL3EWCfen3_bzu--12">
+        <object placeholders="1" c4Name="Auth0" c4Type="External Software System" c4Description="OIDC login and JWT token issuance.&#xa;Provides role claim for RBAC enforcement in API." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="p_ngUfL3EWCfen3_bzu--12">
           <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#8C8496;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#736782;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
             <mxGeometry height="120" width="240" x="40" y="680" as="geometry" />
           </mxCell>
@@ -114,14 +117,6 @@
             <mxPoint y="-1" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="JINHK5Vkudbn8ZZGJBFq-9" edge="1" parent="1" source="p_ngUfL3EWCfen3_bzu--10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="p_ngUfL3EWCfen3_bzu--11">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="JINHK5Vkudbn8ZZGJBFq-10" connectable="0" parent="JINHK5Vkudbn8ZZGJBFq-9" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Create domain events" vertex="1">
-          <mxGeometry relative="1" x="-0.0426" y="1" as="geometry">
-            <mxPoint x="1" as="offset" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="JINHK5Vkudbn8ZZGJBFq-11" edge="1" parent="1" source="p_ngUfL3EWCfen3_bzu--7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;entryPerimeter=0;" target="p_ngUfL3EWCfen3_bzu--9">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -143,7 +138,7 @@
         </mxCell>
         <mxCell id="JINHK5Vkudbn8ZZGJBFq-20" connectable="0" parent="JINHK5Vkudbn8ZZGJBFq-19" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Publish events" vertex="1">
           <mxGeometry relative="1" x="-0.6698" y="-2" as="geometry">
-            <mxPoint as="offset" />
+            <mxPoint y="46" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="JINHK5Vkudbn8ZZGJBFq-21" edge="1" parent="1" source="p_ngUfL3EWCfen3_bzu--9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="p_ngUfL3EWCfen3_bzu--15">
@@ -183,6 +178,25 @@
           <mxGeometry height="21" width="180" as="geometry">
             <mxRectangle height="21" width="180" as="alternateBounds" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-61" edge="1" parent="1" source="p_ngUfL3EWCfen3_bzu--8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;fontFamily=Helvetica;fontSize=12;fontColor=#FFFFFF;" target="p_ngUfL3EWCfen3_bzu--11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-62" connectable="0" parent="JINHK5Vkudbn8ZZGJBFq-61" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];pointerEvents=1;strokeColor=inherit;spacingLeft=10;spacingRight=4;fontFamily=Helvetica;fontSize=12;fontColor=#FFFFFF;fillColor=#52a2d8;gradientColor=none;" value="Create domain events" vertex="1">
+          <mxGeometry relative="1" x="-0.3244" as="geometry">
+            <mxPoint y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-63" connectable="0" parent="JINHK5Vkudbn8ZZGJBFq-61" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];pointerEvents=1;strokeColor=inherit;spacingLeft=10;spacingRight=4;fontFamily=Helvetica;fontSize=12;fontColor=#FFFFFF;fillColor=#52a2d8;gradientColor=none;" value="" vertex="1">
+          <mxGeometry relative="1" x="-0.3244" y="2" as="geometry">
+            <mxPoint y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JINHK5Vkudbn8ZZGJBFq-65" connectable="0" parent="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Create domain events" vertex="1">
+          <mxGeometry x="602" y="455" as="geometry" />
+        </mxCell>
+        <mxCell id="Qn8OiN83xh80XBNVjFQ0-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;span data-teams=&quot;true&quot;&gt;Figure 3 – C4 Component Diagram&lt;br&gt;&lt;br&gt;&lt;br/&gt;This diagram illustrates the internal component structure of the API service. It shows how individual components collaborate to process requests and manage device loan operations. Components include API controllers that handle incoming requests, authentication adapters that validate user identity, service layer components that implement business logic, repositories responsible for data access, and messaging publishers that send events through Azure Service Bus. Monitoring components are also included to capture logs and performance metrics. This level of detail demonstrates a modular and maintainable backend design.&lt;/span&gt;" vertex="1">
+          <mxGeometry height="106" width="865" x="152" y="834" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

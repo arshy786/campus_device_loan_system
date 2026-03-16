@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
   <diagram name="Page-1" id="3431sIR-o-oYEM8f7Sjd">
-    <mxGraphModel dx="6030" dy="6471" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="5273" dy="6018" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -278,6 +278,9 @@
           <mxGeometry relative="1" x="0.6663" y="2" as="geometry">
             <mxPoint x="8" y="-673" as="offset" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="fuOghHg-Wy5lwy6N-rXC-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;span data-teams=&quot;true&quot;&gt;Figure 4 – Deployment Diagram&lt;br&gt;&lt;br&gt;&lt;br/&gt;This diagram represents the deployment architecture of the Campus Device Loan System within the Azure cloud environment. It illustrates how the application components are deployed across cloud infrastructure, including Azure App Service, Azure Functions, Azure Service Bus, Azure SQL Database and Azure Monitor. The diagram also shows connections to external services such as authentication providers and university systems. This deployment view demonstrates how the system supports scalability, reliability, monitoring and secure communication within a cloud based environment.&lt;/span&gt;" vertex="1">
+          <mxGeometry height="122" width="1083" x="-2920.57" y="-3442" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
